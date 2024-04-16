@@ -1,0 +1,43 @@
+@media screen and (max-width:2717px) {
+
+}
+table{
+    width: 90%;
+    margin: auto;
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+thead th{
+    background-color: lightgrey;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+tbody th{
+    text-align: center;
+   
+}
+
+thead th, tbody tr{
+    border-bottom: .5px solid lightgrey;
+}
+
+tbody td{
+    align-items: center;
+}
+
+tbody tr:nth-child(4), tbody tr:nth-child(8), tbody tr:nth-child(7){
+    border-bottom: 2px dashed darkgray;
+}
+table tbody td, tbody th{
+    padding-block: 40px;
+}
+/* styling the head  */
+
+table tbody th{
+    text-align: left;
+}
+th span{
+    display: inline;
+}

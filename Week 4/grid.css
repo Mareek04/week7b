@@ -1,0 +1,39 @@
+main{
+    display: grid;
+    /* grid-template-columns: repeat(); */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,100px);
+    grid-template-areas: 
+    "b b d"
+    "b b c"
+    "e a a"
+    "f f f";
+    gap: 25px 10px;
+}
+
+section{
+    background-color: rgb(60, 2, 250);
+    color: rgb(28, 27, 51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+section:nth-last-of-type(1){
+    grid-area: a;
+}
+section:nth-last-of-type(2){
+    grid-area: b;
+}
+section:nth-last-of-type(3){
+    grid-area: c;
+}
+section:nth-last-of-type(4){
+    grid-area: d;
+}
+section:nth-last-of-type(5){
+    grid-area: e;
+}
+section:nth-last-of-type(6){
+    grid-area: f;
+}

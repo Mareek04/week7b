@@ -1,0 +1,59 @@
+ul{
+    list-style-type:none
+}
+li{
+    height: 300 px;
+    width: 300px;   
+    border: 5px solid crimson;
+    margin: 10px;
+    background-image: radial-gradient(circle, blue 40%,gold 40%);
+
+}
+li:nth-of-type(even){
+    background-image: radial-gradient(circle,blue 40%,gold 40%);
+}
+
+li:nth-of-type(odd){
+    background-image: linear-gradient(to top,gold 20%,violet 20%);
+}
+
+
+li:first-of-type,li:last-of-type{
+    background-image: linear-gradient(to top right,gold 20%,red 20%);
+
+}
+li:nth-last-of-type(3n+2){
+    background-image: repeating-linear-gradient(30deg,khaki 10%,tomato 12%,gold 14%);
+}
+
+li:nth-last-of-type(3n+2){
+    background-image: repeating radial-gradient(circle,khaki 10%,tomato 12%,gold 14%);
+}
+
+li:nth-of-type(5){
+    background-image:url(./Media/download.jpg)url(./Media/download.jpg), url(./Media/OIP.jpg);
+
+    background-size:contain;
+
+    background-repeat:repeat-x,repeat-y,no-repeat;
+}
+
+
+ul>:nth-child(4){
+    background-image: url(./Media/download.jpg),radial-gradient(circle,blue 40%,gold 40%);
+
+    background-size: 100px,cover;
+
+    background-repeat: no-repeat;
+
+    background-position: center,top right;
+
+}
+ul:nth-child(3){
+    background: no-repeat;
+    background-image: url(/Media/OIP.jpg),url(./Media/download.jpg);
+  
+}
+
+
+

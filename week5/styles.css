@@ -1,0 +1,12 @@
+@tailwind base;  
+@tailwind components;
+@tailwind utilities;
+
+
+
+nav li{
+    @apply uppercases sm:bg-transparent bg-orange-500 py-4 my-2 sm:w-fit w-4/5 text-center
+}
+main section{
+    @apply border-4 border-green-600 sm:border-blue-600 lg:border-orange-600 border-double
+}
