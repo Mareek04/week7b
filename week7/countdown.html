@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown to my wedding</title>
+    <style>
+        body{
+            height: 100vh;
+            background: linear-gradient(60deg, orange, rgb(145, 95, 1));
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+        main{
+            height: 90vh;
+        }
+
+        h1{
+            letter-spacing: 20px;
+            padding-block: 30px;
+            background-color: blue;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        h2{
+            letter-spacing: 20px;
+            padding-block: 20px;
+            font-size: 5em;
+            background-color: white;
+            color: blue;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        div span{
+            padding: 10px;
+            width: 150px;
+        }
+        div span:first-of-type{
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 50px;
+        }
+        div span:last-of-type{
+            background-color: white;
+            color: black;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>countdown to birthday </h1>
+
+        <h2>2025</h2>
+
+        <section>
+            <div>
+                <span>00</span>
+                <span>days</span>
+            </div>
+            <div>
+                <span>00</span>
+                <span>hours</span>
+            </div>
+            <div>
+                <span>00</span>
+                <span>minutes</span>
+            </div>
+            <div>
+                <span>00</span>
+                <span>seconds</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    const spans = document.querySelectorAll('span:first-of-type')
+
+    const updateCountDown = () => {
+
+        const bdei = new Date('Apr 22 2025 15:00:00').getTime()
+        const now = new Date().getTime()
+        const gap = bdei - now
+
+        if(gap <= 0){
+            clearTimeout(timer)
+            return
+        }
+
+        const sec = 1000
+        const min = sec * 60
+        const hr = min * 60
+        const dy = hr * 24
+
+        const days = Math.floor(gap / dy ) < 10 ? '0' + Math.floor(gap / dy ) :Math.floor(gap / dy )
+
+        const hours = Math.floor(Math.floor(gap % dy) / hr)
+
+        const minutes = Math.floor(Math.floor(gap % hr) / min)
+
+        const seconds = Math.floor(Math.floor(gap % min) / sec)
+
+
+
+        spans[0].textContent = days
+        spans[1].textContent = hours
+        spans[2].textContent = minutes
+        spans[3].textContent = seconds
+
+        const timer = setTimeout(updateCountDown, 1000)
+    }
+
+    updateCountDown()
+</script>
+</html>

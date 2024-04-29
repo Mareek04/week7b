@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <h1>functions </h1>
+    <button>change color</button>
+
+
+    <input type="text" name="num" id="num" placeholder="insert a number">
+    <button>change font size</button>
+
+    <section>
+        <input type="radio" name="gene" id="male">
+        <label for="male">male</label> <br>
+
+        <input type="radio" name="gene" id="female">
+        <label for="female">female</label> <br>
+    </section>
+</body>
+<script>
+    //create a function that alert "good morning"
+    //function bonjour(){alert('Good morning')}
+    //bonjour()
+
+    function bonjour(name='There'){
+        return(${name} Good Morning)
+    }
+
+
+    bonjour()
+    bonjour('Franc')
+    bonjour('Promise')
+
+    function greeting(name, time){
+        return Hello ${name}, ${time}
+    }
+
+    function add(x,y){
+        return x + y
+    }
+
+    function square(x){
+        return Math.pow(x,2)
+    }
+    
+    function squareRoot(num){
+        return Math.sqrt(num).toFixed(2)
+        
+    }
+    
+    function cubeRoot(num){
+        let result = Math.cbrt(num)
+        let roundedResult = result.toFixed(3)
+        return roundedResult
+        
+    }
+
+    const btn = document.getElementsByTagName('button')
+    const title = document.querySelector('h1')
+    const input = document.getElementById('num')
+
+    function tColor(){
+        title.style.color = rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})
+          
+        let color = #${Math.floor(Math.random()*256).toString(16)}${Math.floor(Math.random()*256).toString(16)}${Math.floor(Math.random()*256).toString(16)}
+        document.body.style.backgroundColor = color
+        console.log(color)
+    }
+
+    function fontSize(){
+        let num = input.value
+        isNaN(num) ? alert('sorry, that is not a number')
+        : title.style.fontSize = num + 'px'
+    }
+
+
+    btn[0].addEventListener('click',tColor)
+
+    btn[1].addEventListener('click', fontSize)
+
+
+    const gender = document.querySelectorAll('input[type="radio"]')
+    const para = document.createElement('p')
+    const sect = document.querySelector('section')
+    
+    function myGene(){
+        gender[0].checked ?
+        (sect.append(para),
+        para.textContent = 'you are a male')
+        : gender[1].checked ?
+        (sect.append(para),
+        para.textContent = 'you are a female')
+        : ''
+    }
+
+    gender[0].addEventListener('input', myGene)
+    gender[1].addEventListener('input', myGene)
+</script>
+</html>
